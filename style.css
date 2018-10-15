@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+    background-color: darkslategray;
+}
+    img {
+        border-radius: 10px;
+    }
+    h1 {
+        color: goldenrod;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin-top: 50px;
+        color: aquamarine;
+    }
+
+    p {
+        padding: 0 200px 40px;
+        color: burlywood;
+    }
+
+    .mailto {
+        margin-left: 100px;
+
+    }
+
+    a {
+        font-size: 24px;
+    }
