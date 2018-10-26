@@ -13,6 +13,18 @@ li {
     width: 100px;
 }
 
+.top {
+    vertical-align: top;
+}
+
+.text {
+    float: none;
+}
+
+.check {
+    margin-left: 100px;
+}
+
 .right {
     float: right;
 }

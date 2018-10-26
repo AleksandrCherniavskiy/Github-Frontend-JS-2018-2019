@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Profile edit page</h1>
-  <form>
+  <form action="https://postman-echo.com/post" method="post">
     <fieldset class="form1">
       <legend>Basic info</legend>
       <ul>
@@ -21,11 +21,13 @@
           <input type="email" name="email" id="email" placeholder="myemail@placeholder.com">
         </li>
         <li>
-          <input type="checkbox" name="keep email private" value="yes" id="privateEmail">
-          <label for="privateEmail">Keep my email adress private</label>
-        </li>
+          <input type="checkbox" class="check" name="keep email private" value="yes" id="privateEmail">
+          <span class="text">Keep my email adress private</span>
         <li>
-          We`ll remove your public profile email and use 1978331+username@users.noreply.localhost
+          <p class="check">
+            We`ll remove your public profile email and use 1978331+username@users.noreply.localhost
+          </p>
+        </li>
         </li>
         <li><label for="date">DOB</label> <input type="date" name="date" id="date"></li>
         <li><label for="blogUrl">Blog url</label> <input type="url" name="blogUrl" id="blogUrl" placeholder="http://"></li>
@@ -49,28 +51,36 @@
           <input type="number" name="experience" id="experience" min="0" max="50" value="3">
           <label for="experience">years</label>
         </li>
-        <li><label>Developer Experience</label></li>
-        <li><input type="radio" name="developerExperience" value="Lerning to program">Lerning to program</li>
-        <li><input type="radio" name="developerExperience" value="Junior dveloper" checked>Junior dveloper</li>
-        <li><input type="radio" name="developerExperience" value="Mid-Level developer">Mid-Level developer</li>
-        <li><input type="radio" name="developerExperience" value="Senior Developer">Senior Developer</li>
+        <li><label>Developer Experience</label>
+          <ul>
+            <li><input type="radio" name="developerExperience" value="Lerning to program">Lerning to program</li>
+            <li><input type="radio" name="developerExperience" value="Junior dveloper" checked>Junior dveloper</li>
+            <li><input type="radio" name="developerExperience" value="Mid-Level developer">Mid-Level developer</li>
+            <li><input type="radio" name="developerExperience" value="Senior Developer">Senior Developer</li>
+          </ul>
+        </li>
         <li>
-          <label for="country">Country</label>
+          <label for="country" class="top">Country</label>
           <select name="country" id="country" size="5" title="wreasd">
             <option value="- Choose Your Country -" disabled>- Choose Your Cuntry -</option>
             <option value="Ukraine" selected>Ukraine</option>
+            <option disabled>--------------------------------</option>
             <option value="USA">USA</option>
             <option value="Thailand">Thailand</option>
             <option value="Spain">Spain</option>
           </select>
         </li>
-        <li><label>Skills</label></li>
-        <li><input type="checkbox" id="html" name="skills1" value="HTML" checked> <label for="html">HTML</label></li>
-        <li><input type="checkbox" id="css" name="skills2" value="css"> <label for="css">CSS</label></li>
-        <li><input type="checkbox" id="js" name="skills3" value="JavaScript"> <label for="js">JavaScript</label></li>
-        <li><input type="checkbox" id="r" name="skills4" value="R">  <label for="r">R</label></li>
-        <li><input type="checkbox" id="scala" name="skills5" value="scala"> <label for="scala">Scala</label></li>
-        <li><input type="checkbox" id="haskell" name="skills6" value="haskell"> <label for="haskell">Haskell</label></li>
+        <li>
+          <label>Skills</label>
+          <ul>
+            <li><input type="checkbox" id="html" name="skills" value="HTML" checked> <label for="html">HTML</label></li>
+            <li><input type="checkbox" id="css" name="skills" value="css"> <label for="css">CSS</label></li>
+            <li><input type="checkbox" id="js" name="skills" value="JavaScript"> <label for="js">JavaScript</label></li>
+            <li><input type="checkbox" id="r" name="skills" value="R">  <label for="r">R</label></li>
+            <li><input type="checkbox" id="scala" name="skills" value="scala"> <label for="scala">Scala</label></li>
+            <li><input type="checkbox" id="haskell" name="skills" value="haskell"> <label for="haskell">Haskell</label></li>
+          </ul>
+        </li>
       </ul>
     </fieldset>
     <input type="hidden" name="likePrograming" value="Yes">
