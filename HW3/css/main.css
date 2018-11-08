@@ -63,6 +63,7 @@ select {
 
 main {
     margin-right: 20px;
+    margin-bottom: 14px;
 }
 
 .main-container {
@@ -167,18 +168,27 @@ article span {
 }
 
 /*FOOTER*/
-.horizontal-line {
+footer::before {
+    display: block;
+    content: "";
     height: 4px;
     background: linear-gradient(to right, #f1592a, #bf1e2e);
-    margin-top: 10px;
+
+}
+
+footer {
+    position: relative;
 }
 
 .to-top {
+    position: absolute;
     text-decoration: none;
     color: #fff;
     padding: 10px;
     background-color: #cd2e2d;
     margin-left: 1200px;
+    top: -35px;
+    left: -100px;
 }
 
 footer .container {
@@ -228,4 +238,5 @@ footer .container {
     background-color: #cd2e2d;
     opacity: 1;
 }
+
 
