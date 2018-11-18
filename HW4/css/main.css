@@ -1,7 +1,6 @@
 body {
     width: 2000px;
     font-family: 'Lato', sans-serif;
-    font-height: 18px;
     line-height: 32px;
     color: #808080;
 }
@@ -22,7 +21,6 @@ body {
 .absolute {
     position: absolute;
 }
-
 
 /*HEADER*/
 .header {
@@ -62,10 +60,6 @@ body {
 }
 
 /*SECTION TOP*/
-.top {
-
-}
-
     .left-top {
         padding-top: 155px;
         color: #fff;
@@ -101,8 +95,6 @@ body {
 
 /*SECTION MESSAGING*/
 .screenshots {
-    height: 600px;
-    height: 100%;
     padding-left: 130px;
 }
     .back-img {
@@ -156,10 +148,11 @@ body {
         justify-content: space-between;
         margin-bottom: 240px;
     }
+      /*Attempt to lift a second comment*/
         .comment-text:nth-of-type(2n) {
             box-shadow: 0 30px 60px rgba(54, 54, 54, 0.15);
             /*margin-top: -30px;*/
-            gposition: relative;
+            position: relative;
             top: -30px;
 
         }
@@ -176,7 +169,7 @@ body {
                 position: relative;
             }
 
-/****Зробити трикутник!!!!!!!!!!*/
+/****make a triangle!!!!!!!!!!*/
            /* .comment-text::after {
                 content: '';
                 width: 0;
@@ -196,9 +189,6 @@ body {
                     color: #F06F64;
                 }
 
-/*                .comment-author img:nth-of-type(2n) {
-                    padding-bottom: 30px;
-                }*/
                 .comment-author img {
                     border-radius: 100px;
                     float: left;
@@ -300,7 +290,6 @@ body {
         width: 180px;
         color: #fff;
         margin-left: -180px;
-        padding-top: -5px;
         position: absolute;
         box-shadow: 0 10px 30px rgba(223, 27, 61, 0.3);
     }
@@ -320,7 +309,7 @@ body {
 /*FOOTER*/
 .footer nav {
     width: 584px;
-    margin: 40px 0px 35px 204px;
+    margin: 40px 0 35px 204px;
 }
     .footer a {
         font: 18px/28px 'Lato';
