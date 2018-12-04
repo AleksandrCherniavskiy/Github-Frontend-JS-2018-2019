@@ -8,7 +8,7 @@ directories:
 before_install:
 - npm update
 install:
-- cd github_frontend+js_2018-2019\HW6\package.json
+- cd github_frontend+js_2018-2019/HW6/package.json
 - npm install
 script:
 - npm test
