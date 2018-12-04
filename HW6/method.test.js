@@ -85,7 +85,7 @@ test('test_arrays', () => {
     let user = {
         name: "Петя",
         age: 30
-    }
+    };
     let keys = Object.keys(user);
     expect(keys).toEqual(["name", "age"]);
 });
