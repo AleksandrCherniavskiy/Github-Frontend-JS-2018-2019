@@ -5,7 +5,7 @@ do {
 
 /*level 2*/
 while ( isFree('east') ) {
-  ast();
+  east();
 };
 
 /*level 3*/
@@ -18,3 +18,10 @@ do {
 } while( isFree('south') );
 
 /*level 4*/
+while (true) {
+    if ( isFree('east') ) {
+      east();
+    } else if ( isFree('south') ) {
+      south();
+    }
+};
