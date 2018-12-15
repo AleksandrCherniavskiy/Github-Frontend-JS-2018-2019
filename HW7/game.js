@@ -9,24 +9,82 @@ while ( isFree('east') ) {
 };
 
 /*level 3*/
-do {
-  south();
-
-  if ( isFree('east') ) {
-    east();
-  }
-} while( isFree('south') );
-
+for (let i; i !== 'next';) {
+    i = south();
+    i = east();
+}
 /*level 4*/
-while (true) {
-    if ( isFree('east') ) {
-      east();
-    } else if ( isFree('south') ) {
-      south();
+for (let i; i !== 'next';) {
+    while ( isFree('east') ) {
+        i = east();
     }
-};
+    while ( isFree('south') ) {
+        i = south();
+    }
+}
 
 /*level 5*/
+for (let i; i !== 'next';) {
+    while ( isFree('east') ) {
+        i = east();
+    };
+    while ( isFree('south') ) {
+        i = south();
+    };
+    while ( isFree('west') ) {
+        i = west();
+    };
+    while ( isFree('south') ) {
+        i = south();
+    };
+    while ( isFree('west') ) {
+        i = west();
+    };
+    while ( isFree('north') ) {
+        i = north();
+    };
+    while ( isFree('west') ) {
+        i = west();
+    };
+    while ( isFree('south') ) {
+        i = south();
+    };
+    while ( isFree('east') ) {
+        i = east();
+    };
+}
+
+/*for (let i = 0; i < 5; i++ ) {
+    if ( isFree('east') &&  isFree('south') ) {
+        while ( isFree('south') ) {
+            south();
+        }
+    } else if ( isFree('south') &&  isFree('west') ) {
+        while ( isFree('west') ) {
+            west();
+        }
+    } else if ( isFree('east') ) {
+        while ( isFree('east') ) {
+            east();
+        }
+    } else if ( isFree('south') ) {
+        while ( isFree('south') ) {
+            south();
+        }
+    } else if ( isFree('west') ) {
+        while ( isFree('west') ) {
+            west();
+        }
+    } else if ( isFree('north') ) {
+        while (isFree('north')) {
+            north();
+        }
+        ;
+    }
+}
+
+
+
 while (true) {
     if ( isFree('east') ) {
         east();
@@ -39,9 +97,6 @@ while (true) {
     }
 };
 
-while (isFree('east') !== "next") {
-    east();
-}
 
 let i;
 while (i !== 'next') {
