@@ -229,3 +229,57 @@ for (let i = true; i !== 'next';) {
             i = north();
         }
     }*/
+
+    
+/*universal script*/
+for (let isFinish; isFinish !== 'next';) {
+    if ( !isFree('east') ) {
+        isFinish = north();
+    } else if ( !isFree('south') ) {
+        isFinish = east();
+    }
+}
+let i = '';
+let before = '';
+while(i !== 'next'){
+    if(isFree('north') && (before != 'south') && ( !isFree('west') )){
+        map();
+        before = 'north';
+        i = north();
+        north();
+    }
+    else {
+        if (isFree('south') && (before != 'north') ) {
+           if ( ( !isFree('east') )) {
+                map();
+                before = 'south';
+                i = south();
+                south();
+           } else {
+               map();
+               south();
+               before = 'south';
+           }
+        }
+        else {
+            if (isFree('west') && (before != 'east') ) {
+                if ( ( !isFree('south') )) {
+                    map();
+                    before = 'west';
+                    i = west();
+                    west();
+                } else {
+                    map();
+                    west();
+                    before = 'west';
+                }
+            }
+            else if ( isFree('east') ){
+                map();
+                before = 'east';
+                i = east();
+                east();
+            }
+        }
+    }
+}
