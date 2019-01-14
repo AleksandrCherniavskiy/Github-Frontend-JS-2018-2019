@@ -6,6 +6,8 @@ body {
 }
 
 .container {
+  display: flex;
+  justify-content: space-between;
   width: 1170px;
   margin: 0 auto;
 }
@@ -30,6 +32,8 @@ body {
 /*HEADER*/
 
 .header {
+  display: flex;
+  justify-content: space-between;
   position: relative;
   padding: 41px 200px 0;
   &::before {
@@ -168,9 +172,7 @@ body {
 .comment-text {
   &:nth-of-type(2n) {
     box-shadow: 0 30px 60px rgba(54, 54, 54, 0.15);
-    /*margin-top: -30px;*/
-    position: relative;
-    top: -30px;
+
   }
   width: 370px;
   height: 210px;
@@ -366,4 +368,5 @@ body {
     padding: 0 30px;
   }
 }
+
 
