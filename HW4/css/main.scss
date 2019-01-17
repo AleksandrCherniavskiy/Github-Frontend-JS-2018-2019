@@ -154,6 +154,9 @@ body {
 /*SECTION COMMENTS*/
 
 .comments-section {
+  .container {
+    display: block;
+    }
   padding-top: 90px;
   border-top: 1px solid #e0e0e0;
   .section-title {
@@ -171,8 +174,7 @@ body {
 
 .comment-text {
   &:nth-of-type(2n) {
-    box-shadow: 0 30px 60px rgba(54, 54, 54, 0.15);
-
+   // box-shadow: 0 30px 60px rgba(54, 54, 54, 0.15);
   }
   width: 370px;
   height: 210px;
@@ -184,6 +186,29 @@ body {
   border: 1px solid #E1E1E1;
   margin-bottom: 30px;
   position: relative;
+  background: #fff;
+  :after, :before {
+    top: 100%;
+    left: 10%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  :after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 15px;
+    margin-left: -15px;
+  }
+  :before {
+    border-color: rgba(225, 225, 225, 0);
+    border-top-color: #e1e1e1;
+    border-width: 16px;
+    margin-left: -16px;
+  }
   a {
     display: block;
     padding-top: 10px;
