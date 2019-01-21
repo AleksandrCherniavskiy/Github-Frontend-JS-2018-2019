@@ -83,20 +83,25 @@ body {
   p {
     font-size: 24px;
     line-height: 28px;
-    padding-bottom: 101px;
+    &::after {
+      content: "Download now";
+      margin-top: 101px;
+      box-sizing: border-box;
+      display: block;
+      color: #EA382B;
+      font-weight: 700;
+      font-size: 18px;
+      width: 224px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #fff;
+      text-align: center;
+      font-family: sans-serif;
+      padding-top: 12px;
+    }
   }
   .button {
-    display: block;
-    color: #EA382B;
-    font-weight: 700;
-    font-size: 18px;
-    width: 224px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: #fff;
-    text-align: center;
-    padding-top: 17px;
-    font-family: sans-serif;
+
   }
   img {
     padding-top: 117px;
