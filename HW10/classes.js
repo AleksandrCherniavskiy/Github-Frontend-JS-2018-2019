@@ -38,7 +38,7 @@ class Shape {
  *      периметр() */
 class Polygon extends Shape {
   /**
-  * @param {array} center
+  * @param {Point} center
   * @param {Point[]} points
   * */
   constructor(center, points) {
@@ -55,28 +55,28 @@ class Polygon extends Shape {
  */
 class Rectangle extends Polygon {
   /**
-   * @param {array} center
+   * @param {Point} center
    * @param {number} width
    * @param {number} height
    * */
   constructor(center, width, height) {
     super(center);
-    this.width = width;
-    this.height = height;
+    this._width = width;
+    this._height = height;
   }
 
+  /**
+   * @returns {number}
+   */
   square() {
-    /**
-     * return number
-     */
-    return this.width * this.height;
+    return this._width * this._height;
   }
 
+  /**
+   * @returns {number}
+   */
   perimeter() {
-    /**
-     * return number
-     */
-    return (this.width + this.height) * 2;
+    return (this._width + this._height) * 2;
   }
 }
 
@@ -86,25 +86,25 @@ class Rectangle extends Polygon {
  *      периметр() */
 class Square extends Rectangle {
   /**
-   * @param {array} center
+   * @param {Point} center
    * @param {number} width
    */
   constructor(center, width) {
     super(center, width, width);
   }
 
+  /**
+   * @returns {number}
+   */
   square() {
-    /**
-     * return number
-     */
-    return this.width ** 2;
+    return this._width ** 2;
   }
 
+  /**
+   * @returns {number}
+   */
   perimeter() {
-    /**
-     * return number
-     */
-    return this.width * 4;
+    return this._width * 4;
   }
 }
 
@@ -115,26 +115,26 @@ class Square extends Rectangle {
 class Circle extends Shape {
   /**
    *
-   * @param {array} center
+   * @param {Point} center
    * @param {number} radius
    */
   constructor(center, radius) {
     super(center);
-    this.radius = radius;
+    this._radius = radius;
   }
 
+  /**
+   * @returns {number}
+   */
   square() {
-    /**
-     * return number
-     */
     return Math.PI * (this.radius ** 2);
   }
 
+  /**
+   * @returns {number}
+   */
   perimeter() {
-    /**
-     * return number
-     */
-    return 2 * Math.PI * this.radius;
+    return 2 * Math.PI * this._radius;
   }
 }
 
