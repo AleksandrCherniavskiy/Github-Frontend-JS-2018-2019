@@ -39,7 +39,7 @@ class Shape {
 class Polygon extends Shape {
   /**
   * @param {array} center
-  * @param {object} points
+  * @param {Point[]} points
   * */
   constructor(center, points) {
     super(center);
