@@ -43,7 +43,7 @@ class Polygon extends Shape {
   * */
   constructor(center, points) {
     super(center);
-    this.points = points;
+    this._points = points;
   }
 }
 
