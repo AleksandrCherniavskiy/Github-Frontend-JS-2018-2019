@@ -26,7 +26,7 @@
 
 class Shape {
   /**
-   * @param {array} center
+   * @param {Point} center
    */
   constructor(center) {
     this.center = center;
