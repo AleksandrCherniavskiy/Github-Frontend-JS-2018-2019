@@ -33,9 +33,6 @@ class Shape {
   }
 }
 
-/* багатокутник -> фігура:
- *      вершини[координати],
- *      периметр() */
 class Polygon extends Shape {
   /**
   * @param {Point} center
@@ -47,15 +44,9 @@ class Polygon extends Shape {
   }
 }
 
-/* прямокутник -> багатокутник:
- *      довжина,
- *      висота,
- *      площа(),
- *      периметр()
- */
 class Rectangle extends Polygon {
   /**
-   * @param {Point} center
+   * @param {Point[]} center
    * @param {number} width
    * @param {number} height
    * */
@@ -80,13 +71,9 @@ class Rectangle extends Polygon {
   }
 }
 
-/* квадрат -> прямокутник:
- *      довжинаСторони,
- *      площа(),
- *      периметр() */
 class Square extends Rectangle {
   /**
-   * @param {Point} center
+   * @param {Point[]} center
    * @param {number} width
    */
   constructor(center, width) {
@@ -108,14 +95,10 @@ class Square extends Rectangle {
   }
 }
 
-/* круг -> фігура:
- *      радіус,
- *      площа(),
- *      периметр() */
 class Circle extends Shape {
   /**
    *
-   * @param {Point} center
+   * @param {Point[]} center
    * @param {number} radius
    */
   constructor(center, radius) {
@@ -127,7 +110,7 @@ class Circle extends Shape {
    * @returns {number}
    */
   square() {
-    return Math.PI * (this.radius ** 2);
+    return Math.PI * (this._radius ** 2);
   }
 
   /**
