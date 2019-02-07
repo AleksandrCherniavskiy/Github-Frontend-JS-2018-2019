@@ -26,7 +26,7 @@
 
 class Shape {
   /**
-   * @param {Point} center
+   * @param {Point[]} center
    */
   constructor(center) {
     this._center = center;
