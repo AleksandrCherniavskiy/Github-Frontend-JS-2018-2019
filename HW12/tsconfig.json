@@ -1,7 +1,8 @@
 {
   "files": [
     //"src/main.ts",
-    "src/classPolygon.ts"
+    //"src/classPolygon.ts"
+    "src/*.ts"
   ],
   "compilerOptions": {
     "noImplicitAny": true,
