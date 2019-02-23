@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+import { Task } from '../task';
 
 @Component({
   selector: 'app-add-task',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent implements OnInit {
-  task: string;
-  todolist: Array<string>;
+
+  task: Task;
+  taskValue: string;
+  todolist: Array<Task>;
 
   constructor() {
     this.todolist = [];
@@ -15,13 +18,17 @@ export class AddTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTask(task) {
+  addTask() {
+    this.task = new Task();
+    this.task.text = this.taskValue;
+    this.task.isChecked = false;
     this.todolist.push(this.task);
-    this.task = null;
     console.log(this.todolist);
   }
 
-  remove(task) {
-    this.todolist.pop();
+  remove(i: number) {
+    // add
+    this.todolist.splice(i, 1);
   }
+
 }
