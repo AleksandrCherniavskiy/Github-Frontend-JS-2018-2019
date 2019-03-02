@@ -1,5 +1,6 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, OnInit, Output, ViewChild} from '@angular/core';
 import { Task } from '../task';
+import { Logger } from '../core/services/logger';
 
 @Component({
   selector: 'app-add-task',
@@ -7,28 +8,35 @@ import { Task } from '../task';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent implements OnInit {
+  @ViewChild('name') nameField: ElementRef;
 
   task: Task;
   taskValue: string;
-  todolist: Array<Task>;
+  todoList: Array<Task>;
 
   constructor() {
-    this.todolist = [];
+    this.todoList = [];
   }
   ngOnInit() {
   }
 
-  addTask() {
+  addTask(): void {
     this.task = new Task();
     this.task.text = this.taskValue;
     this.task.isChecked = false;
-    this.todolist.push(this.task);
-    console.log(this.todolist);
+    this.task.isDelete = false;
+    this.task.isEdit = false;
+    this.todoList.push(this.task);
+
+    this.nameField.nativeElement.focus();
+
+    this.taskValue = '';
   }
 
-  remove(i: number) {
-    // add
-    this.todolist.splice(i, 1);
+  delete(e, idx) {
+    if (e === 'delete') {
+      this.todoList[idx].isDelete = true;
+    }
   }
 
 }

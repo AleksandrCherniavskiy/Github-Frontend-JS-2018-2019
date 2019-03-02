@@ -1,15 +1,22 @@
 <div>
   <label>Task text:
     <input [(ngModel)]="taskValue"
+           (updateTask)="update($event)"
            [ngModelOptions]="{standalone: true}"
-           placeholder="name">
+           placeholder="name" autofocus
+           #name >
   </label>
   <button (click)="addTask()">Add task</button>
 </div>
-<ul>
-  <li [ngClass]="{'done': item.isChecked}"
-    *ngFor="let item of todolist; let i = index">
-    <app-task-item [item]="item"></app-task-item>
+<ul [ngSwitch]="task.isEdit">
+  <label>
+    <input *ngSwitchCase="true" type="text">
+  </label>
+  <li *ngSwitchDefault
+    [ngClass]="{'done': item.isChecked, 'delete': item.isDelete}"
+    *ngFor="let item of todoList; let i = index">
+    <app-task-item [item]="item" (deleteTask)="delete($event, i)">
+    </app-task-item>
   </li>
 
 </ul>

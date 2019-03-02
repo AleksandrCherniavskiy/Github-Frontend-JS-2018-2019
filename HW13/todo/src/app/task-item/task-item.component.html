@@ -1,3 +1,5 @@
 {{ item.text }}
 <button type="button" *ngIf="!item.isChecked"
         (click)="resolve()">Check</button>
+<button (click)="delete()">Delete</button>
+<button (click)="edit()">Edit</button>
