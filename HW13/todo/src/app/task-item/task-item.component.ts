@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
 import { Task } from '../task';
 import { Logger } from '../core/services/logger';
-import {logger} from "codelyzer/util/logger";
 
 @Component({
   selector: 'app-task-item',
@@ -11,7 +10,7 @@ import {logger} from "codelyzer/util/logger";
 export class TaskItemComponent implements OnInit {
   @Input() item: Task;
   @Input() index: number;
-
+  itemEdit: string;
   @Output() deleteTask = new EventEmitter();
 
   constructor( private logger: Logger ) {}
