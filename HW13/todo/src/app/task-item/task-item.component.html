@@ -1,3 +1,4 @@
+<input type="text" *ngIf="item.isEdit" ([ngModel])="item.text">
 {{ item.text }}
 <button type="button" *ngIf="!item.isChecked"
         (click)="resolve()">Check</button>

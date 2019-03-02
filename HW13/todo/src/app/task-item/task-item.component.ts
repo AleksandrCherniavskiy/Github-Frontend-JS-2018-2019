@@ -28,7 +28,7 @@ export class TaskItemComponent implements OnInit {
   }
 
   edit() {
-    this.item.isEdit = true;
+    this.item.isEdit = !this.item.isEdit;
     this.logger.log(`Task ${this.item.text} edit ${this.item.isEdit}`);
   }
 
