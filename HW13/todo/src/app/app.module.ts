@@ -5,16 +5,22 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TaskItemComponent } from './task-item/task-item.component';
+import { AppRoutingModule } from './app-routing.module';
+import { EditTaskComponent } from './edit-task/edit-task.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    EditTaskComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

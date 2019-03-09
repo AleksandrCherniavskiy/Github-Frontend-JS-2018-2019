@@ -1,6 +1,6 @@
-import {Component, ElementRef, OnInit, Output, ViewChild} from '@angular/core';
-import { Task } from '../task';
-import { Logger } from '../core/services/logger';
+import {Component, OnInit, OnChanges,  Output} from '@angular/core';
+import {Task} from '../task';
+import { TodolistService } from '../core/services/todolist.service';
 
 @Component({
   selector: 'app-add-task',
@@ -8,35 +8,19 @@ import { Logger } from '../core/services/logger';
   styleUrls: ['./add-task.component.scss']
 })
 export class AddTaskComponent implements OnInit {
-  @ViewChild('name') nameField: ElementRef;
+   todoList: Task[];
 
-  task: Task;
-  taskValue: string;
-  todoList: Array<Task>;
+  constructor(private todolistService: TodolistService) {}
 
-  constructor() {
-    this.todoList = [];
-  }
   ngOnInit() {
+    this.getTodoList();
   }
 
-  addTask(): void {
-    this.task = new Task();
-    this.task.text = this.taskValue;
-    this.task.isChecked = false;
-    this.task.isDelete = false;
-    this.task.isEdit = false;
-    this.todoList.push(this.task);
-
-    this.nameField.nativeElement.focus();
-
-    this.taskValue = '';
+  getTodoList(): void {
+    this.todoList = this.todolistService.getTodoList();
   }
 
-  delete(e, idx) {
-    if (e === 'delete') {
-      this.todoList[idx].isDelete = true;
-    }
+  addTask(taskText: string): void {
+    this.todolistService.addTask(taskText);
   }
-
 }

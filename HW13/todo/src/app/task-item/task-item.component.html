@@ -1,6 +1,7 @@
-<input *ngIf="item.isEdit" ([ngModel])="item.text">
-{{ item.text }}
-<button type="button" *ngIf="!item.isChecked"
-        (click)="resolve()">Check</button>
-<button (click)="delete()">Delete</button>
-<button (click)="edit()">Edit</button>
+<span>
+  {{item.text}}
+</span>
+<button type="button" *ngIf="!item.isChecked && !item.isEdit"
+        (click)="resolve(item)">Check</button>
+<button (click)="delete(item)">Delete</button>
+<button routerLink="/edit-task" (click)="edit(item)">Edit</button>

@@ -2,11 +2,11 @@
   <label>Task text:
     <input [(ngModel)]="taskValue"
            (updateTask)="update($event)"
-           [ngModelOptions]="{standalone: true}"
+           (keyup.enter)="addTask(taskValue)"
            placeholder="name" autofocus
            #name >
   </label>
-  <button (click)="addTask()">Add task</button>
+  <button (click)="addTask(taskValue)">Add task</button>
 </div>
 <ul>
   <li [ngClass]="{'done': item.isChecked, 'delete': item.isDelete}"

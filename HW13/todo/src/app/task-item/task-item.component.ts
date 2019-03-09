@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, Output, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Task } from '../task';
 import { Logger } from '../core/services/logger';
+import { TodolistService} from '../core/services/todolist.service';
 
 @Component({
   selector: 'app-task-item',
@@ -9,26 +10,23 @@ import { Logger } from '../core/services/logger';
 })
 export class TaskItemComponent implements OnInit {
   @Input() item: Task;
-  @Input() index: number;
-  itemEdit: string;
-  @Output() deleteTask = new EventEmitter();
 
-  constructor( private logger: Logger ) {}
+  constructor( private logger: Logger,
+               private service: TodolistService) {}
 
   ngOnInit() {
   }
 
-  resolve() {
-    this.item.isChecked = true;
+  edit(item: Task) {
+    TodolistService.edit(item);
   }
 
-  delete() {
-    this.deleteTask.emit('delete');
+  resolve(item: Task) {
+    TodolistService.resolve(item);
   }
 
-  edit() {
-    this.item.isEdit = !this.item.isEdit;
-    this.logger.log(`Task ${this.item.text} edit ${this.item.isEdit}`);
+  delete(item: Task) {
+    TodolistService.delete(item);
   }
 
 
