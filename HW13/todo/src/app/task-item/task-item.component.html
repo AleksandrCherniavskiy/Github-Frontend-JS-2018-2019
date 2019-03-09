@@ -1,0 +1,7 @@
+<span>
+  {{item.text}}
+</span>
+<button type="button" *ngIf="!item.isChecked && !item.isEdit"
+        (click)="resolve(item)">Check</button>
+<button (click)="delete(item)">Delete</button>
+<button routerLink="/edit-task" (click)="edit(item)">Edit</button>
